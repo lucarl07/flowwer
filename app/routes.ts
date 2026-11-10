@@ -7,7 +7,7 @@ export default [
   route("/signup", "routes/signup.tsx"),
 
   // ==== Páginas de Domínio ====
-  layout("layouts/AppLayout.tsx", [ 
+  layout("routes/domain-layout.tsx", [ 
     route("/dashboard", "routes/dashboard.tsx"),
 
     ...prefix("transactions", [
