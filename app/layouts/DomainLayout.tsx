@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 
-export default function AppLayout() {
+export default function DomainLayout() {
   return (
     <div>
       <p className="text-green-500 font-mono">
