@@ -10,11 +10,6 @@ export const clientMiddleware: Route.ClientMiddlewareFunction[] = [
   requireClientAuth
 ]
 
-export function HydrateFallback() {
-  // Temporário; Talvez eu remova no futuro, mas se sobrar tempo, dou uma estilizada
-  return <div>Carregando...</div>;
-}
-
 export default function Component() {
   return <DomainLayout />;
 }
