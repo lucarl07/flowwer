@@ -1,8 +1,60 @@
 @import "tailwindcss";
 
+/** FONTE: Buenard (de 400 a 700) **/
+@font-face {
+  font-family: 'Buenard';
+  src: url('./assets/fonts/Buenard/Buenard-VariableFont_wght.ttf');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/** FONTE: Cantarell (normal e itálico, 400 & 700) **/
+@font-face {
+  font-family: 'Cantarell';
+  src: url('./assets/fonts/Cantarell/Cantarell-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: url('./assets/fonts/Cantarell/Cantarell-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: url('./assets/fonts/Cantarell/Cantarell-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: url('./assets/fonts/Cantarell/Cantarell-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/** FONTE: Cantarell (de 100 a 400) **/
+@font-face {
+  font-family: 'Playwrite Danmark Loopet';
+  src: url('./assets/fonts/Playwrite_DK_Loopet/PlaywriteDKLoopet-VariableFont_wght.ttf');
+  font-weight: 100 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Cantarell", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Buenard", ui-serif, Georgia, serif;
+  --font-script: "Playwrite Danmark Loopet", cursive;
 }
 
 html,
