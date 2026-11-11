@@ -1,3 +1,4 @@
+import LoginPage from '~/features/auth/LoginPage';
 import type { Route } from './+types/login'
 
 export function meta({}: Route.MetaArgs) {
@@ -7,11 +8,6 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Component() {
-  return (
-    <hgroup>
-      <h1>Página de Login</h1>
-      <p>Página pré-autenticação...</p>
-    </hgroup>
-  );
+  return <LoginPage />;
 }
 

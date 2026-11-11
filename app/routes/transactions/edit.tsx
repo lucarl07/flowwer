@@ -1,3 +1,4 @@
+import SaveTransactionPage from '~/features/transactions/SaveTransactionPage';
 import type { Route } from './+types/edit'
 
 export function meta({}: Route.MetaArgs) {
@@ -7,10 +8,6 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Component() {
-  return (
-    <hgroup>
-      <p>Página pós-autenticação! Yay!</p>
-    </hgroup>
-  );
+  return <SaveTransactionPage />;
 }
 

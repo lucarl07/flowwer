@@ -1,3 +1,4 @@
+import LandingPage from '~/features/landing/LandingPage';
 import type { Route } from './+types/landing'
 
 export function meta({}: Route.MetaArgs) {
@@ -7,8 +8,6 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Component() {
-  return (
-    <h1>Olá mundo!</h1>
-  );
+  return <LandingPage />;
 }
 
