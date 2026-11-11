@@ -10,11 +10,6 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
-export const links: Route.LinksFunction = () => [
-  /* Inserir links de recursos a serem carregados (ex.: fontes) aqui, como
-   * um objeto com os atributos do elemento <link> (href, rel, etc.) */
-];
-
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
