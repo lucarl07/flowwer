@@ -59,9 +59,5 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  @apply bg-[#f7f4d5] text-[#0a3323];
 }
