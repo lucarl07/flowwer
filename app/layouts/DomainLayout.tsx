@@ -18,9 +18,8 @@ export default function DomainLayout() {
         />
       </ScallopedSection>
       {/*
-      <div className="bg-[#f7f4d5]">
-        haiiii
-      </div>
+        Aqui vou adicionar um componente lateral recortado p/os layouts de
+        desktop...
       */}
       <Outlet />
       <ScallopedSection 
