@@ -69,3 +69,4 @@ export default function ScallopedSection<T extends ScallopedElement = "section">
     </Component>
   );
 }
+
