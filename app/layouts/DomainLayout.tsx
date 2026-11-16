@@ -1,7 +1,13 @@
 import { Outlet } from "react-router";
 
 import $logo from "~/assets/images/logo.png";
+import ICON_Home from "~/assets/icons/barrafixa/home.png"
+import ICON_Movimentacoes from "~/assets/icons/barrafixa/movimentações.png"
+import ICON_Categorias from "~/assets/icons/barrafixa/categorias.png"
+import ICON_Metas from "~/assets/icons/barrafixa/metas.png"
+
 import ScallopedSection from "~/components/ui/ScallopedSection";
+import StyledNavLink from "~/components/ui/StyledNavLink";
 
 export default function DomainLayout() {
   return (
@@ -31,7 +37,36 @@ export default function DomainLayout() {
         "
         top 
       >
-        hi mom
+        <nav className="w-full px-14 inline-flex items-center justify-between">
+          <StyledNavLink to="/dashboard">
+            <img 
+              src={ICON_Home} 
+              alt="Ir à página inicial" 
+              className="p-1 w-12"
+            />
+          </StyledNavLink>
+          <StyledNavLink to="/transactions">
+            <img 
+              src={ICON_Movimentacoes} 
+              alt="Ir à página de movimentações" 
+              className="p-1 w-12"
+            />
+          </StyledNavLink>
+          <StyledNavLink to="/categories">
+            <img 
+              src={ICON_Categorias} 
+              alt="Ir à página de categorias" 
+              className="p-1 w-12"
+            />
+          </StyledNavLink>
+          <StyledNavLink to="/goals">
+            <img 
+              src={ICON_Metas} 
+              alt="Ir à página de metas" 
+              className="p-1 w-12"
+            />
+          </StyledNavLink>
+        </nav>
       </ScallopedSection>
     </div>
   )
