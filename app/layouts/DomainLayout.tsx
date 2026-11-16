@@ -7,9 +7,9 @@ export default function DomainLayout() {
   return (
     <div className="flex flex-col sm:flex-row sm:gap-8">
       <ScallopedSection 
-        bottom
         as="header" 
         className="sm:hidden"
+        bottom
       >
         <img 
           src={$logo} 
@@ -24,14 +24,13 @@ export default function DomainLayout() {
       */}
       <Outlet />
       <ScallopedSection 
-        top
         as="footer"
         autoMargin={false}
         className="
-          fixed bottom-0 inset-x-0 z-10 h-20 flex items-center justify-around
-          <temp> text-red-500
+          fixed bottom-0 inset-x-0 z-10 h-20 flex items-center justify-around text-[#0a3323]
           sm:hidden
         "
+        top 
       >
         hi mom
       </ScallopedSection>
