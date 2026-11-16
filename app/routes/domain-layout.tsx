@@ -1,13 +1,9 @@
 import DomainLayout from '~/layouts/DomainLayout'
+import { authMiddleware } from '~/lib/middleware';
 import type { Route } from './+types/domain-layout'
 
-const requireClientAuth: Route.ClientMiddlewareFunction 
-  = async ({ request, context }) => {
-  // TODO: Essa é uma função de middleware para verificar se o usuário está autenticado.
-}
-
 export const clientMiddleware: Route.ClientMiddlewareFunction[] = [
-  requireClientAuth
+  authMiddleware
 ]
 
 export default function Component() {
