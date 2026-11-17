@@ -2,7 +2,6 @@ import { Outlet } from "react-router";
 
 import $logo from "~/assets/images/logo.png";
 import $logoflor2 from "~/assets/images/logoflor2.png";
-import $flores from "~/assets/images/flores.png";
 
 import ScallopedSection from "~/components/ui/ScallopedSection";
 import StyledNavLink from "~/components/ui/StyledNavLink";
@@ -17,6 +16,7 @@ export default function DomainLayout() {
       <aside className="
         hidden sm:flex 
         sticky flex-col top-0 h-screen bg-[#f7f4d5] w-64 px-5
+        bg-(image:--img-flores) bg-no-repeat bg-position-[right_-60px_bottom_-120px] bg-size-[250%_auto]
       ">
         <img 
           src={$logoflor2} 
