@@ -5,7 +5,10 @@ interface IStyledNavLink extends NavLinkProps {}
 export default function StyledNavLink({ 
   children, ...rest 
 }: IStyledNavLink) {
-  const baseClasses = "rounded-full"
+  const baseClasses = `
+    rounded-full flex flex-col items-center text-[#0a3323]
+    sm:flex-row sm:px-2.5
+  `;
   const activeClasses = `${baseClasses} bg-[#ffb3b3]`
   const pendingClasses = `${baseClasses} bg-[#c26060]`
 
