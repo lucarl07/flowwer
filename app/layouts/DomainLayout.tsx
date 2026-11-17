@@ -1,13 +1,10 @@
 import { Outlet } from "react-router";
 
 import $logo from "~/assets/images/logo.png";
-import ICON_Home from "~/assets/icons/barrafixa/home.png"
-import ICON_Movimentacoes from "~/assets/icons/barrafixa/movimentações.png"
-import ICON_Categorias from "~/assets/icons/barrafixa/categorias.png"
-import ICON_Metas from "~/assets/icons/barrafixa/metas.png"
 
 import ScallopedSection from "~/components/ui/ScallopedSection";
 import StyledNavLink from "~/components/ui/StyledNavLink";
+import PageIcon from "~/components/ui/PageIcon";
 
 export default function DomainLayout() {
   return (
@@ -20,7 +17,7 @@ export default function DomainLayout() {
         <img 
           src={$logo} 
           alt="Logo do Flowwer"
-          className="w-48 object-contain"
+          className="w-36 my-4 ms-4 object-contain"
         />
       </ScallopedSection>
       {/*
@@ -39,32 +36,16 @@ export default function DomainLayout() {
       >
         <nav className="w-full px-14 inline-flex items-center justify-between">
           <StyledNavLink to="/dashboard">
-            <img 
-              src={ICON_Home} 
-              alt="Ir à página inicial" 
-              className="p-1 w-12"
-            />
+            <PageIcon page="dashboard" />
           </StyledNavLink>
           <StyledNavLink to="/transactions">
-            <img 
-              src={ICON_Movimentacoes} 
-              alt="Ir à página de movimentações" 
-              className="p-1 w-12"
-            />
+            <PageIcon page="transactions" />
           </StyledNavLink>
           <StyledNavLink to="/categories">
-            <img 
-              src={ICON_Categorias} 
-              alt="Ir à página de categorias" 
-              className="p-1 w-12"
-            />
+            <PageIcon page="categories" />
           </StyledNavLink>
           <StyledNavLink to="/goals">
-            <img 
-              src={ICON_Metas} 
-              alt="Ir à página de metas" 
-              className="p-1 w-12"
-            />
+            <PageIcon page="goals" />
           </StyledNavLink>
         </nav>
       </ScallopedSection>
