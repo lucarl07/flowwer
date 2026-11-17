@@ -52,9 +52,13 @@
 }
 
 @theme {
+  /* ==== Tipografia ==== */
   --font-sans: "Cantarell", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Buenard", ui-serif, Georgia, serif;
   --font-script: "Playwrite Danmark Loopet", cursive;
+
+  /* ==== Imagens ==== */
+  --img-flores: url('./assets/images/flores.png');
 }
 
 html,
