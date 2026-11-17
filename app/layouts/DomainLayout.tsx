@@ -1,6 +1,8 @@
 import { Outlet } from "react-router";
 
 import $logo from "~/assets/images/logo.png";
+import $logoflor2 from "~/assets/images/logoflor2.png";
+import $flores from "~/assets/images/flores.png";
 
 import ScallopedSection from "~/components/ui/ScallopedSection";
 import StyledNavLink from "~/components/ui/StyledNavLink";
@@ -10,13 +12,18 @@ export default function DomainLayout() {
   return (
     <div className="
       flex flex-col 
-      sm:flex-row sm:min-h-screen sm:gap-8 
+      sm:flex-row sm:min-h-screen sm:gap-10 
     ">
       <aside className="
         hidden sm:flex 
-        sticky flex-col top-0 h-screen bg-[#f7f4d5] 
+        sticky flex-col top-0 h-screen bg-[#f7f4d5] w-64 px-5
       ">
-        <nav className="flex flex-col gap-5.25 m-5">
+        <img 
+          src={$logoflor2} 
+          alt="Logotipo do Flowwer"
+          className="m-5 bg-clip-content pe-4"
+        />
+        <nav className="flex flex-col gap-5.25">
           <StyledNavLink to="/dashboard">
             <PageIcon page="dashboard" />
             <span>
