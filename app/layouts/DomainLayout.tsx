@@ -8,10 +8,44 @@ import PageIcon from "~/components/ui/PageIcon";
 
 export default function DomainLayout() {
   return (
-    <div className="flex flex-col sm:flex-row sm:gap-8">
+    <div className="
+      flex flex-col 
+      sm:flex-row sm:min-h-screen sm:gap-8 
+    ">
+      <aside className="
+        hidden sm:flex 
+        sticky flex-col top-0 h-screen bg-[#f7f4d5] 
+      ">
+        <nav className="flex flex-col gap-5.25 m-5">
+          <StyledNavLink to="/dashboard">
+            <PageIcon page="dashboard" />
+            <span>
+              Início
+            </span>
+          </StyledNavLink>
+          <StyledNavLink to="/transactions">
+            <PageIcon page="transactions" />
+            <span>
+              Movimentações
+            </span>
+          </StyledNavLink>
+          <StyledNavLink to="/categories">
+            <PageIcon page="categories" />
+            <span>
+              Categorias
+            </span>
+          </StyledNavLink>
+          <StyledNavLink to="/goals">
+            <PageIcon page="goals" />
+            <span>
+              Metas
+            </span>
+          </StyledNavLink>
+        </nav>
+      </aside>
       <ScallopedSection 
         as="header" 
-        className="sm:hidden"
+        className="sm:hidden" 
         bottom
       >
         <img 
@@ -20,10 +54,6 @@ export default function DomainLayout() {
           className="w-36 my-4 ms-4 object-contain"
         />
       </ScallopedSection>
-      {/*
-        Aqui vou adicionar um componente lateral recortado p/os layouts de
-        desktop...
-      */}
       <Outlet />
       <ScallopedSection 
         as="footer"
