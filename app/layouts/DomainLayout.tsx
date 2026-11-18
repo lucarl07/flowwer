@@ -14,8 +14,8 @@ export default function DomainLayout() {
       sm:flex-row sm:min-h-screen sm:gap-10 
     ">
       <aside className="
-        hidden sm:flex 
-        sticky flex-col top-0 h-screen bg-[#f7f4d5] w-64 px-5
+        hidden sm:flex scalloped-r
+        sticky flex-col top-0 h-screen bg-[#f7f4d5] w-64 ps-4 pe-10
         bg-(image:--img-flores) bg-no-repeat bg-position-[right_-60px_bottom_-120px] bg-size-[250%_auto]
       ">
         <img 
@@ -23,7 +23,9 @@ export default function DomainLayout() {
           alt="Logotipo do Flowwer"
           className="m-5 bg-clip-content pe-4"
         />
-        <nav className="flex flex-col gap-5.25">
+        <nav className="flex flex-col gap-5.25"> 
+          {/* TODO: Flores ficam por trás dos itens dependendo da 
+            resolução; o que fazer? */}
           <StyledNavLink to="/dashboard">
             <PageIcon page="dashboard" />
             <span>
