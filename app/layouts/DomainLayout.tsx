@@ -11,24 +11,29 @@ export default function DomainLayout() {
       flex flex-col-reverse min-h-screen gap-10 
       sm:flex-row 
     ">
-      <aside className="
+      {/* ==== Seção mutável (direita/inferior) ==== */}
       <section className="
         flex bg-[#f7f4d5] px-10 pb-4 pt-10 scalloped-mask [--sc-t:24px]
         sm:sticky sm:flex-col sm:top-0 sm:h-screen sm:w-64 sm:py-0 sm:ps-4 sm:pe-10 sm:[--sc-t:0px] sm:[--sc-r:24px]
         sm:bg-(image:--img-flores) sm:bg-no-repeat sm:bg-position-[right_-60px_bottom_-120px] sm:bg-size-[250%_auto] 
       ">
+        {/* ==== Wrapper de filtros para a imagem de background ==== */}
         <div className="
           hidden absolute inset-0 backdrop-sepia-35 bg-[#f7f4d5]/65 scalloped-r
           sm:block
         "></div>
+
+        {/* ==== Logo alternativa ==== */}
         <img 
           src={$logoflor2} 
-          alt="Logotipo do Flowwer"
+          alt="Logo verde do Flowwer"
           className="
             relative hidden 
             sm:inline-block sm:m-5 sm:bg-clip-content sm:pe-4 
           "
         />
+
+        {/* ==== Navegação ==== */}
         <nav className=" 
           relative inline-flex justify-around w-full 
           sm:flex sm:flex-col sm:items-stretch sm:gap-5.25 
@@ -51,7 +56,11 @@ export default function DomainLayout() {
           </PageLink.Root>
         </nav>
       </section>
+
+      {/* ==== Conteúdo da página atual ==== */}
       <Outlet />
+
+      {/* ==== Cabeçalho do mobile ==== */}
       <header className="
         fixed flex z-10 top-0 pb-6 bg-[#f7f4d5] w-full scalloped-b
         sm:hidden
