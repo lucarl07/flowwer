@@ -3,8 +3,7 @@ import { Outlet } from "react-router";
 import $logo from "~/assets/images/logo.png";
 import $logoflor2 from "~/assets/images/logoflor2.png";
 
-import StyledNavLink from "~/components/ui/StyledNavLink";
-import PageIcon from "~/components/ui/PageIcon";
+import PageLink from "~/components/PageLink";
 
 export default function DomainLayout() {
   return (
@@ -31,30 +30,22 @@ export default function DomainLayout() {
         "> 
           {/* TODO: Flores ficam por trás dos itens dependendo da 
             resolução; o que fazer? */}
-          <StyledNavLink to="/dashboard">
-            <PageIcon page="dashboard" />
-            <span className="hidden sm:inline">
-              Início
-            </span>
-          </StyledNavLink>
-          <StyledNavLink to="/transactions">
-            <PageIcon page="transactions" />
-            <span className="hidden sm:inline">
-              Movimentações
-            </span>
-          </StyledNavLink>
-          <StyledNavLink to="/categories">
-            <PageIcon page="categories" />
-            <span className="hidden sm:inline">
-              Categorias
-            </span>
-          </StyledNavLink>
-          <StyledNavLink to="/goals">
-            <PageIcon page="goals" />
-            <span className="hidden sm:inline">
-              Metas
-            </span>
-          </StyledNavLink>
+          <PageLink.Root to="/dashboard">
+            <PageLink.Icon page="dashboard" />
+            <PageLink.Label value="Início" hideOnMobile />
+          </PageLink.Root>
+          <PageLink.Root to="/transactions">
+            <PageLink.Icon page="transactions" />
+            <PageLink.Label value="Movimentações" hideOnMobile />
+          </PageLink.Root>
+          <PageLink.Root to="/categories">
+            <PageLink.Icon page="categories" />
+            <PageLink.Label value="Categorias" hideOnMobile />
+          </PageLink.Root>
+          <PageLink.Root to="/goals">
+            <PageLink.Icon page="goals" />
+            <PageLink.Label value="Metas" hideOnMobile />
+          </PageLink.Root>
         </nav>
       </aside>
       <Outlet />
