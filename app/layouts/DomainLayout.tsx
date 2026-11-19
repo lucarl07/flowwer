@@ -12,6 +12,7 @@ export default function DomainLayout() {
       sm:flex-row 
     ">
       <aside className="
+      <section className="
         flex bg-[#f7f4d5] px-10 pb-4 pt-10 scalloped-mask [--sc-t:24px]
         sm:sticky sm:flex-col sm:top-0 sm:h-screen sm:w-64 sm:py-0 sm:ps-4 sm:pe-10 sm:[--sc-t:0px] sm:[--sc-r:24px]
         sm:bg-(image:--img-flores) sm:bg-no-repeat sm:bg-position-[right_-60px_bottom_-120px] sm:bg-size-[250%_auto] 
@@ -49,7 +50,7 @@ export default function DomainLayout() {
             <PageLink.Label value="Metas" hideOnMobile />
           </PageLink.Root>
         </nav>
-      </aside>
+      </section>
       <Outlet />
       <header className="
         fixed flex z-10 top-0 pb-6 bg-[#f7f4d5] w-full scalloped-b
