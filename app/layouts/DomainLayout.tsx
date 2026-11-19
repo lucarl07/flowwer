@@ -13,8 +13,8 @@ export default function DomainLayout() {
       sm:flex-row 
     ">
       <aside className="
-        flex bg-[#f7f4d5] px-10 pb-4 pt-10 scalloped-t 
-        sm:sticky sm:flex-col sm:top-0 sm:h-screen sm:w-64 sm:py-0 sm:ps-4 sm:pe-10 sm:scalloped-r
+        flex bg-[#f7f4d5] px-10 pb-4 pt-10 scalloped-mask [--sc-t:24px]
+        sm:sticky sm:flex-col sm:top-0 sm:h-screen sm:w-64 sm:py-0 sm:ps-4 sm:pe-10 sm:[--sc-t:0px] sm:[--sc-r:24px]
         sm:bg-(image:--img-flores) sm:bg-no-repeat sm:bg-position-[right_-60px_bottom_-120px] sm:bg-size-[250%_auto]
       ">
         <img 
@@ -68,32 +68,6 @@ export default function DomainLayout() {
           className="w-36 my-3 ms-4 object-contain"
         />
       </header>
-      {/* 
-      <ScallopedSection 
-        as="footer"
-        autoMargin={false}
-        className="
-          fixed bottom-0 inset-x-0 z-10 h-20 flex items-center justify-around text-[#0a3323]
-          sm:hidden
-        "
-        top 
-      >
-        <nav className="w-full px-14 inline-flex items-center justify-between">
-          <StyledNavLink to="/dashboard">
-            <PageIcon page="dashboard" />
-          </StyledNavLink>
-          <StyledNavLink to="/transactions">
-            <PageIcon page="transactions" />
-          </StyledNavLink>
-          <StyledNavLink to="/categories">
-            <PageIcon page="categories" />
-          </StyledNavLink>
-          <StyledNavLink to="/goals">
-            <PageIcon page="goals" />
-          </StyledNavLink>
-        </nav>
-      </ScallopedSection>
-      */}
     </div>
   )
 }
