@@ -3,57 +3,63 @@ import { Outlet } from "react-router";
 import $logo from "~/assets/images/logo.png";
 import $logoflor2 from "~/assets/images/logoflor2.png";
 
-import ScallopedSection from "~/components/ui/ScallopedSection";
 import StyledNavLink from "~/components/ui/StyledNavLink";
 import PageIcon from "~/components/ui/PageIcon";
 
 export default function DomainLayout() {
   return (
     <div className="
-      flex flex-col 
-      sm:flex-row sm:min-h-screen sm:gap-10 
+      flex flex-col-reverse min-h-screen gap-10 
+      sm:flex-row 
     ">
       <aside className="
-        hidden sm:flex scalloped-r
-        sticky flex-col top-0 h-screen bg-[#f7f4d5] w-64 ps-4 pe-10
-        bg-(image:--img-flores) bg-no-repeat bg-position-[right_-60px_bottom_-120px] bg-size-[250%_auto]
+        flex bg-[#f7f4d5] px-10 pb-4 pt-10 scalloped-t 
+        sm:sticky sm:flex-col sm:top-0 sm:h-screen sm:w-64 sm:py-0 sm:ps-4 sm:pe-10 sm:scalloped-r
+        sm:bg-(image:--img-flores) sm:bg-no-repeat sm:bg-position-[right_-60px_bottom_-120px] sm:bg-size-[250%_auto]
       ">
         <img 
           src={$logoflor2} 
           alt="Logotipo do Flowwer"
-          className="m-5 bg-clip-content pe-4"
+          className="
+            hidden 
+            sm:inline-block sm:m-5 sm:bg-clip-content sm:pe-4
+          "
         />
-        <nav className="flex flex-col gap-5.25"> 
+        <nav className="
+          inline-flex justify-around w-full 
+          sm:flex sm:flex-col sm:items-stretch sm:gap-5.25 
+        "> 
           {/* TODO: Flores ficam por trás dos itens dependendo da 
             resolução; o que fazer? */}
           <StyledNavLink to="/dashboard">
             <PageIcon page="dashboard" />
-            <span>
+            <span className="hidden sm:inline">
               Início
             </span>
           </StyledNavLink>
           <StyledNavLink to="/transactions">
             <PageIcon page="transactions" />
-            <span>
+            <span className="hidden sm:inline">
               Movimentações
             </span>
           </StyledNavLink>
           <StyledNavLink to="/categories">
             <PageIcon page="categories" />
-            <span>
+            <span className="hidden sm:inline">
               Categorias
             </span>
           </StyledNavLink>
           <StyledNavLink to="/goals">
             <PageIcon page="goals" />
-            <span>
+            <span className="hidden sm:inline">
               Metas
             </span>
           </StyledNavLink>
         </nav>
       </aside>
+      <Outlet />
       <header className="
-        pb-6 bg-[#f7f4d5] scalloped-b
+        fixed flex z-10 top-0 pb-6 bg-[#f7f4d5] w-full scalloped-b
         sm:hidden
       ">
         <img 
@@ -62,7 +68,7 @@ export default function DomainLayout() {
           className="w-36 my-3 ms-4 object-contain"
         />
       </header>
-      <Outlet />
+      {/* 
       <ScallopedSection 
         as="footer"
         autoMargin={false}
@@ -87,6 +93,7 @@ export default function DomainLayout() {
           </StyledNavLink>
         </nav>
       </ScallopedSection>
+      */}
     </div>
   )
 }
