@@ -14,22 +14,24 @@ export default function DomainLayout() {
       <aside className="
         flex bg-[#f7f4d5] px-10 pb-4 pt-10 scalloped-mask [--sc-t:24px]
         sm:sticky sm:flex-col sm:top-0 sm:h-screen sm:w-64 sm:py-0 sm:ps-4 sm:pe-10 sm:[--sc-t:0px] sm:[--sc-r:24px]
-        sm:bg-(image:--img-flores) sm:bg-no-repeat sm:bg-position-[right_-60px_bottom_-120px] sm:bg-size-[250%_auto]
+        sm:bg-(image:--img-flores) sm:bg-no-repeat sm:bg-position-[right_-60px_bottom_-120px] sm:bg-size-[250%_auto] 
       ">
+        <div className="
+          hidden absolute inset-0 backdrop-sepia-35 bg-[#f7f4d5]/65 scalloped-r
+          sm:block
+        "></div>
         <img 
           src={$logoflor2} 
           alt="Logotipo do Flowwer"
           className="
-            hidden 
-            sm:inline-block sm:m-5 sm:bg-clip-content sm:pe-4
+            relative hidden 
+            sm:inline-block sm:m-5 sm:bg-clip-content sm:pe-4 
           "
         />
-        <nav className="
-          inline-flex justify-around w-full 
+        <nav className=" 
+          relative inline-flex justify-around w-full 
           sm:flex sm:flex-col sm:items-stretch sm:gap-5.25 
         "> 
-          {/* TODO: Flores ficam por trás dos itens dependendo da 
-            resolução; o que fazer? */}
           <PageLink.Root to="/dashboard">
             <PageLink.Icon page="dashboard" />
             <PageLink.Label value="Início" hideOnMobile />
