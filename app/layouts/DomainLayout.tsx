@@ -52,17 +52,16 @@ export default function DomainLayout() {
           </StyledNavLink>
         </nav>
       </aside>
-      <ScallopedSection 
-        as="header" 
-        className="sm:hidden" 
-        bottom
-      >
+      <header className="
+        pb-6 bg-[#f7f4d5] scalloped-b
+        sm:hidden
+      ">
         <img 
           src={$logo} 
           alt="Logo do Flowwer"
-          className="w-36 my-4 ms-4 object-contain"
+          className="w-36 my-3 ms-4 object-contain"
         />
-      </ScallopedSection>
+      </header>
       <Outlet />
       <ScallopedSection 
         as="footer"
