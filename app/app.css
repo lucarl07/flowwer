@@ -52,16 +52,65 @@
 }
 
 @theme {
-
+  /* ==== Tipografia ==== */
   --font-cantarell: "Cantarell", ui-sans-serif, system-ui, sans-serif;
   --font-buenard: "Buenard", ui-serif, Georgia, serif;
   --font-playwrite: "Playwrite Danmark Loopet", cursive;
 
+  /* ==== Cores ==== */
   --color-beige: #f7f4d5;
   --color-darkgreen: #0a3323;
   --color-lightgreen: #bcd883;
   --color-pink: #ffb3b3;
   --color-blue: #1B5E7A;
+
+  /* ==== Imagens ==== */
+  --img-flores: url('./assets/images/flores.png');
+}
+
+/* Máscara compartilhada: lê o tamanho da faixa de cada borda (0 = sem ondas) */
+@utility scalloped-mask {
+  mask:
+    /* corpo sólido, recuado pelas faixas ativas */
+    linear-gradient(#000 0 0)
+      var(--sc-l, 0px) var(--sc-t, 0px) /
+      calc(100% - var(--sc-l, 0px) - var(--sc-r, 0px))
+      calc(100% - var(--sc-t, 0px) - var(--sc-b, 0px))
+      no-repeat,
+    /* direita */
+    radial-gradient(circle at 0 50%,
+      #000 calc(var(--sc-r, 0px) - 0.5px), #0000 var(--sc-r, 0px))
+      right / var(--sc-r, 0px) calc(var(--sc-r, 0px) * 2) repeat-y,
+    /* esquerda */
+    radial-gradient(circle at 100% 50%,
+      #000 calc(var(--sc-l, 0px) - 0.5px), #0000 var(--sc-l, 0px))
+      left / var(--sc-l, 0px) calc(var(--sc-l, 0px) * 2) repeat-y,
+    /* topo */
+    radial-gradient(circle at 50% 100%,
+      #000 calc(var(--sc-t, 0px) - 0.5px), #0000 var(--sc-t, 0px))
+      top / calc(var(--sc-t, 0px) * 2) var(--sc-t, 0px) repeat-x,
+    /* base */
+    radial-gradient(circle at 50% 0,
+      #000 calc(var(--sc-b, 0px) - 0.5px), #0000 var(--sc-b, 0px))
+      bottom / calc(var(--sc-b, 0px) * 2) var(--sc-b, 0px) repeat-x;
+}
+
+/* Uma utility por borda: ativa a faixa e aplica a máscara */
+@utility scalloped-t {
+  --sc-t: var(--scallop-r, 24px);
+  @apply scalloped-mask;
+}
+@utility scalloped-b {
+  --sc-b: var(--scallop-r, 24px);
+  @apply scalloped-mask;
+}
+@utility scalloped-l {
+  --sc-l: var(--scallop-r, 24px);
+  @apply scalloped-mask;
+}
+@utility scalloped-r {
+  --sc-r: var(--scallop-r, 24px);
+  @apply scalloped-mask;
 }
 
 html,
