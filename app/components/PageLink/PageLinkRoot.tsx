@@ -9,7 +9,7 @@ export default function PageLinkRoot({
     rounded-full flex flex-col items-center 
     sm:flex-row sm:px-2.5
   `;
-  const activeClasses = `${baseClasses} bg-[#ffb3b3]`
+  const activeClasses = `${baseClasses} bg-pink`
   const pendingClasses = `${baseClasses} bg-[#c26060]`
 
   return (
