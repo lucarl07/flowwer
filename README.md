@@ -56,6 +56,6 @@ Criar uma plataforma web para que os usuários possam registrar movimentações 
 # **7. Participação e Contribuintes:**
 | Integrante / Setor | Lígia Andreza - @ligiandrz | Bernardo James - @salsapunk | João Pedro da Silva - @jpedrooss | Luiz Carlos - @lucarl07 | Maria Eduarda - @madubr |
 |---|---|---|---|---|---|
-| **Web** | • UI/UX design;<br>• Páginas:<br>◦ Home (Landing Page)<br>◦ Login<br>◦ Cadastro | Páginas:<br>• Início (Dashboard)<br>• Metas | Chamadas de API | • Config. do router<br>• Testes automatizados<br>• Suporte geral | Páginas:<br>• Categorias<br>• Movimentações |
+| **Web** | • UI/UX design;<br>• Páginas:<br>◦ Home (Landing Page)<br>◦ Login<br>◦ Cadastro <br>◦ Documentação geral<br>| Páginas:<br>• Início (Dashboard)<br>• Metas | Chamadas de API | • Config. do router<br>• Testes automatizados<br>• Suporte geral | Páginas:<br>• Categorias<br>• Movimentações |
 | **Mobile** | • Relatório final<br>• (+ mesmo da web) | • Diagrama UML<br>• (+ mesmo da web) | • (mesmo da web) | • (mesmo da web)<br>• (- testes) | • (mesmo da web) |
 | **Back-end** | (T.B.D) | • Swagger (Docs.) | (T.B.D) | (T.B.D) | Banco de dados |
