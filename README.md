@@ -1,87 +1,61 @@
-# Welcome to React Router!
+<img width="1366" height="436" alt="image" src="https://github.com/user-attachments/assets/73826f6c-61de-40ae-b4f9-a1551ea48fed" />
 
-A modern, production-ready template for building full-stack React applications using React Router.
+# **1. Introdução**
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+A proposta é desenvolver um site de organização financeira pessoal que permita aos usuários controlar suas receitas, despesas, contas e metas financeiras em um único lugar. O sistema deve apresentar as informações de maneira clara e intuitiva, ajudando o usuário a entender sua situação financeira e a planejar melhor o uso do dinheiro.
 
-## Features
+## 2.Objetivo do Sistema
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+Criar uma plataforma web para que os usuários possam registrar movimentações financeiras, acompanhar seus gastos, organizar seus orçamentos mensais e estabelecer metas de economia.
 
-## Getting Started
+# **3. Público-alvo**
 
-### Installation
+- Pessoas que desejam organizar suas finanças pessoais.
+- Estudantes que precisam administrar uma renda limitada.
+- Pessoas que desejam economizar para alcançar objetivos específicos.
 
-Install the dependencies:
+# **4. Requisitos Funcionais (RF)**
 
-```bash
-npm install
-```
+| ID | Requisito | Descrição |
+| --- | --- | --- |
+| RF01 | Cadastro de usuários | Permitir que novos usuários criem uma conta informando nome, e-mail e senha |
+| RF02 | Registro de receitas e despesas | Permitir cadastrar entradas e saídas de dinheiro, informando valor, data, categoria e descrição |
+| RF03 | Categorias de gastos | Permitir classificar despesas em categorias como alimentação, transporte, moradia, lazer, educação e saúde |
+| RF04 | Dashboard | Apresentar despesas, distribuição de gastos por categoria |
+| RF05 | Metas financeiras | Permitir criar objetivos financeiros, definindo valor desejado, prazo e acompanhamento do progresso |
+| RF06 | Edição e exclusão de registros | Permitir consultar, editar e excluir receitas, despesas, categorias e metas cadastradas |
 
-### Development
+# **5. Requisitos Não Funcionais (RNF)**
 
-Start the development server with HMR:
+| Código | Classificação | Requisito |
+| --- | --- | --- |
+| RNF01 | Segurança | Apenas usuários autenticados podem acessar as matérias e tarefas; |
+| RNF02 | Desempenho | A criação/edição de matérias e tarefas devem demorar no máximo 1 segundo; |
+| RNF03 | Disponibilidade | O sistema deve estar disponível a maior parte do tempo; |
+| RNF04 | Escalabilidade | O sistema deve suportar o aumento no número de matérias e tarefas, além do número de usuários; |
+| RNF05 | Manutenibilidade | O sistema deve permirtir alterações sem mudanças em todas as partes; |
+| RNF06 | Usabilidade | O usuário deve conseguir, facilmente, criar, editar e excluir matérias e tarefas em poucos passos. |
 
-```bash
-npm run dev
-```
+# 5. Instruções para execução
 
-Your application will be available at `http://localhost:5173`.
+# **6. Tecnologias**
 
-## Building for Production
+**Frameworks:**
 
-Create a production build:
+- Web: React Router
+- Back-End: Spring Boot
 
-```bash
-npm run build
-```
+**Controladores de versão**: Git e Github
 
-## Deployment
+**APIs:** (apenas a nossa)
 
-### Docker Deployment
+**Ferramentas de design**: Canva
 
-To build and run using Docker:
+**Ferramentas de estilização**: Tailwind CSS
 
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+# **7. Participação e Contribuintes:**
+| Integrante / Setor | Lígia Andreza - @ligiandrz | Bernardo James - @salsapunk | João Pedro da Silva - @jpedrooss | Luiz Carlos - @lucarl07 | Maria Eduarda - @madubr |
+|---|---|---|---|---|---|
+| **Web** | • UI/UX design;<br>• Páginas:<br>◦ Home (Landing Page)<br>◦ Login<br>◦ Cadastro <br>◦ Documentação geral<br>| Páginas:<br>• Início (Dashboard)<br>• Metas | Chamadas de API | • Config. do router<br>• Testes automatizados<br>• Suporte geral | Páginas:<br>• Categorias<br>• Movimentações |
+| **Mobile** | • Relatório final<br>• (+ mesmo da web) | • Diagrama UML<br>• (+ mesmo da web) | • (mesmo da web) | • (mesmo da web)<br>• (- testes) | • (mesmo da web) |
+| **Back-end** | (T.B.D) | • Swagger (Docs.) | (T.B.D) | (T.B.D) | Banco de dados |
