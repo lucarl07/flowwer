@@ -147,7 +147,10 @@ export default function LandingPage() {
             <img
               src={logo}
               alt="flowwer"
-              className="-mb-20 -mt-20 w-full max-w-none"
+              className="
+                -my-10 w-full max-w-none
+                lg:-mb-20 lg:-mt-20 
+              "
             />
             <p className="max-w-xs text-2xl leading-snug tracking-wide -mt-40 text-lightgreen">
               Controle seus gastos, acompanhe seu saldo e alcance seus
@@ -180,7 +183,7 @@ export default function LandingPage() {
       {/* rodape */}
       <footer className="flex flex-wrap items-center justify-center gap-4 bg-beige px-6 pb-8 pt-2 text-center text-lg tracking-wide sm:text-xl">
         <p>
-          Desenvolvido por @salsapunk, @ligiandrz, @lucarl07, @madubr e @jpedrooss no GitHub ©2026 Para mais informações, acesse:
+          ©2026 Desenvolvido por @salsapunk, @ligiandrz, @lucarl07, @madubr e @jpedrooss no GitHub. Para mais informações, acesse:
         </p>
 
         <a
