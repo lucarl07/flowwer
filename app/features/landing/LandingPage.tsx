@@ -78,11 +78,11 @@ export default function LandingPage() {
     <div className="font-buenard text-darkgreen">
       <section className="bg-beige">       
 
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-6 pb-16 pt-2 text-center">
+        <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-6 py-16 pt-2 text-center">
           <img
             src={logo}
             alt="flowwer"
-            className="-mb-59 -mt-50 w-full max-w-3xl"
+            className="-mb-16 mt-8 w-full max-w-3xl"
           />
           <p className="text-xl tracking-wide sm:text-3xl">
             Organize suas finanças, realize seus desejos
@@ -147,12 +147,9 @@ export default function LandingPage() {
             <img
               src={logo}
               alt="flowwer"
-              className="
-                -my-10 w-full max-w-none
-                lg:-mb-20 lg:-mt-20 
-              "
+              className="-mb-20 w-full max-w-none"
             />
-            <p className="max-w-xs text-2xl leading-snug tracking-wide -mt-40 text-lightgreen">
+            <p className="max-w-xs text-2xl leading-snug tracking-wide text-lightgreen">
               Controle seus gastos, acompanhe seu saldo e alcance seus
               objetivos com facilidade e clareza
             </p>
