@@ -116,15 +116,22 @@ export default function LandingPage() {
           className="relative z-10 px-6 pb-20 pt-10"
         >
           <div className="relative mx-auto max-w-6xl">
-            <h2 className="mx-auto max-w-3xl text-center font-playwrite text-3xl leading-tight text-lightgreen drop-shadow-[0_2px_2px_rgba(0,0,0,0.35)] sm:text-5xl">
-  Tudo que você precisa pra uma vida financeira organizada
-</h2>
+            <h2 className="
+              mx-auto max-w-3xl text-center font-playwrite text-3xl leading-tight text-lightgreen drop-shadow-[0_2px_2px_rgba(0,0,0,0.35)] 
+              sm:text-5xl
+            ">
+              Tudo que você precisa pra uma vida financeira organizada
+            </h2>
 
             <ul className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {features.map((feature) => (
                 <li
                   key={feature.title}
-                  className="flex flex-col items-center gap-2 rounded-3xl bg-beige px-5 py-7 text-center shadow-[0_0_40px_rgba(188,216,131,0.3)] transition-transform duration-300 ease-in-out hover:scale-[1.03]">
+                  className="
+                    flex flex-col items-center gap-2 rounded-3xl bg-beige px-5 py-7 text-center shadow-[0_0_40px_rgba(188,216,131,0.3)] 
+                    transition-transform duration-300 ease-in-out hover:scale-[1.03]
+                  "
+                >
                   <span>{feature.icon}</span>
                   <h3 className="text-2xl tracking-wide">{feature.title}</h3>
                   <p className="text-sm leading-snug">{feature.description}</p>
@@ -138,10 +145,10 @@ export default function LandingPage() {
         <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-6 pb-16 md:grid-cols-[1.5fr_1fr]">
           <div className="flex flex-col items-center gap-6 text-center">
             <img
-  src={logo}
-  alt="flowwer"
-  className="-mb-20 -mt-20 w-full max-w-none"
-/>
+              src={logo}
+              alt="flowwer"
+              className="-mb-20 -mt-20 w-full max-w-none"
+            />
             <p className="max-w-xs text-2xl leading-snug tracking-wide -mt-40 text-lightgreen">
               Controle seus gastos, acompanhe seu saldo e alcance seus
               objetivos com facilidade e clareza
@@ -171,25 +178,28 @@ export default function LandingPage() {
       </div>
 
       {/* rodape */}
-<footer className="flex flex-wrap items-center justify-center gap-4 bg-beige px-6 pb-8 pt-2 text-center text-lg tracking-wide sm:text-xl">
-  <p>
-    Desenvolvido por @salsapunk, @ligiandrz, @lucarl07, @madubr e @jpedrooss no GitHub ©2026 Para mais informações, acesse:
-  </p>
+      <footer className="flex flex-wrap items-center justify-center gap-4 bg-beige px-6 pb-8 pt-2 text-center text-lg tracking-wide sm:text-xl">
+        <p>
+          Desenvolvido por @salsapunk, @ligiandrz, @lucarl07, @madubr e @jpedrooss no GitHub ©2026 Para mais informações, acesse:
+        </p>
 
-  <a
-    href="https://github.com/lucarl07/flowwer"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Acessar repositório do Flowwer no GitHub"
-    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-pink transition duration-300 hover:scale-110 hover:brightness-95"
-  >
-    <img
-      src={githubflowwer}
-      alt=""
-      className="h-13 w-13 object-contain"
-    />
-  </a>
-</footer>
+        <a
+          href="https://github.com/lucarl07/flowwer"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Acessar repositório do Flowwer no GitHub"
+          className="
+            flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-pink transition duration-300 
+            hover:scale-110 hover:brightness-95
+          "
+        >
+          <img
+            src={githubflowwer}
+            alt=""
+            className="h-13 w-13 object-contain"
+          />
+        </a>
+      </footer>
     </div>
   );
 }
