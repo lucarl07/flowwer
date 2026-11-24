@@ -46,4 +46,72 @@ describe("Página: LoginPage", () => {
     })
   })
 
+  describe("Envio do formulário", () => {
+    const invalidEmails = [
+      "email", 
+      "email.com", 
+      "@address", 
+      "@address.com", 
+    ]
+
+    it("Não envia quando e-mail e senha estão vazios", async () => {
+      const { user, onSubmit, email, senha, botao } = setup();
+
+      await user.click(botao);
+
+      expect(onSubmit).not.toHaveBeenCalled();
+      expect(email).toBeInvalid();
+      expect(senha).toBeInvalid();
+    });
+
+    it("Não envia quando apenas o e-mail está preenchido", async () => {
+      const { user, onSubmit, email, senha, botao } = setup();
+
+      await user.type(email, "email@valido.com")
+      await user.click(botao);
+
+      expect(onSubmit).not.toHaveBeenCalled();
+      expect(email).toBeValid();
+      expect(senha).toBeInvalid();
+    });
+
+    it("Não envia quando apenas a senha está preenchida", async () => {
+      const { user, onSubmit, email, senha, botao } = setup();
+
+      await user.type(senha, "senhaqualquer")
+      await user.click(botao);
+
+      expect(onSubmit).not.toHaveBeenCalled();
+      expect(email).toBeInvalid();
+      expect(senha).toBeValid();
+    });
+
+    it.for(invalidEmails)("Não envia quando o e-mail é inválido: %s", async (invalidEmail) => {
+      const { user, onSubmit, email, senha, botao } = setup();
+      const _password = "12345678"
+
+      await user.type(senha, _password)
+      await user.type(email, invalidEmail)
+      await user.click(botao);
+
+      expect(onSubmit).not.toHaveBeenCalled();
+      expect(email).toBeInvalid();
+      expect(senha).toBeValid();
+    });
+
+    it("Envia quando o e-mail é válido e a senha está preenchida", async () => {
+      const { user, onSubmit, email, senha, botao } = setup();
+      const _email = "meuEmail@valido.com"
+      const _password = "12345678"
+
+      await user.type(senha, _password)
+      await user.type(email, _email)
+      await user.click(botao);
+
+      expect(onSubmit).toHaveBeenCalled();
+      expect(email).toBeValid();
+      expect(senha).toBeValid();
+    })
+  })
 })
+
