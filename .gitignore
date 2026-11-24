@@ -1,7 +1,17 @@
+# SO e usuário
 .DS_Store
-.env
 .temp/
+
+# Dependências
 /node_modules/
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Testes & relacionados
+.vitest/
+coverage/
 
 # React Router
 /.react-router/
