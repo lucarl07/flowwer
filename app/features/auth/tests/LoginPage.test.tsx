@@ -1,50 +1,47 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { beforeEach, describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import LoginPage from "../LoginPage";
 
+function setup() {
+  const user = userEvent.setup();
+  const { container } = render(<LoginPage />);
+
+  // Espiona o submit do <form>. O preventDefault evita o erro do jsdom
+  // ("Not implemented: HTMLFormElement.prototype.requestSubmit/submit").
+  const onSubmit = vi.fn((e: Event) => e.preventDefault());
+
+  container.querySelector("form")!.addEventListener("submit", onSubmit);
+
+  return {
+    user,
+    onSubmit,
+    email: screen.getByLabelText(/\be-?mail\b/i),
+    senha: screen.getByLabelText(/\bsenha\b/i),
+    botao: screen.getByRole("button", { name: "Entrar" }),
+  };
+}
+
 describe("Página: LoginPage", () => {
-  // ==== Definindo identificadores ====
-  const emailLabelText = /\be-?mail\b/i  // Ex.: 'EMAIL', 'E-mail', 'e-mail', 'email'
-  const senhaLabelText = /\bsenha\b/i   // Ex.: 'SENHA', 'Senha', 'senha'
+  it("Carrega os componentes de entrada e botão \"Entrar\"", () => {
+    const { email, senha, botao } = setup()
 
-  beforeEach(() => {
-    render(<LoginPage />)
-  })
-
-  it("Carrega os componentes de entrada AuthInput e PasswordInput", () => {
-    expect(
-      screen.getByLabelText(emailLabelText)
-    ).toBeInTheDocument()
-
-    expect(
-      screen.getByLabelText(senhaLabelText)
-    ).toBeInTheDocument()
+    expect(email).toBeInTheDocument()
+    expect(senha).toBeInTheDocument()
+    expect(botao).toBeInTheDocument()
   })
 
   it("Atualiza o valor dos componentes de entrada ao digitar neles", async () => {
-    const fakeUser = userEvent.setup()
+    const { user, email, senha } = setup()
     const emailValue = "Olá mundo!"
     const senhaValue = "Lorem ipsum"
 
-    await fakeUser.type(
-      screen.getByLabelText(emailLabelText),
-      emailValue
-    )
+    await user.type(email, emailValue)
+    await user.type(senha, senhaValue)
 
-    await fakeUser.type(
-      screen.getByLabelText(senhaLabelText),
-      senhaValue
-    )
-
-    expect(
-      screen.getByLabelText(emailLabelText)
-    ).toHaveValue(emailValue)
-
-    expect(
-      screen.getByLabelText(senhaLabelText)
-    ).toHaveValue(senhaValue)
+    expect(email).toHaveValue(emailValue)
+    expect(senha).toHaveValue(senhaValue)
   })
 
   it.skip("Impede login sem inserir um e-mail", async () => {})
