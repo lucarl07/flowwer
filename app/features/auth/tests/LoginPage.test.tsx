@@ -24,26 +24,26 @@ function setup() {
 }
 
 describe("Página: LoginPage", () => {
-  it("Carrega os componentes de entrada e botão \"Entrar\"", () => {
-    const { email, senha, botao } = setup()
+  describe("Comportamento básico", () => {
+    it("Carrega os componentes de entrada e botão \"Entrar\"", () => {
+      const { email, senha, botao } = setup()
 
-    expect(email).toBeInTheDocument()
-    expect(senha).toBeInTheDocument()
-    expect(botao).toBeInTheDocument()
+      expect(email).toBeInTheDocument()
+      expect(senha).toBeInTheDocument()
+      expect(botao).toBeInTheDocument()
+    })
+
+    it("Atualiza o valor dos componentes de entrada ao digitar neles", async () => {
+      const { user, email, senha } = setup()
+      const emailValue = "Olá mundo!"
+      const senhaValue = "Lorem ipsum"
+
+      await user.type(email, emailValue)
+      await user.type(senha, senhaValue)
+
+      expect(email).toHaveValue(emailValue)
+      expect(senha).toHaveValue(senhaValue)
+    })
   })
 
-  it("Atualiza o valor dos componentes de entrada ao digitar neles", async () => {
-    const { user, email, senha } = setup()
-    const emailValue = "Olá mundo!"
-    const senhaValue = "Lorem ipsum"
-
-    await user.type(email, emailValue)
-    await user.type(senha, senhaValue)
-
-    expect(email).toHaveValue(emailValue)
-    expect(senha).toHaveValue(senhaValue)
-  })
-
-  it.skip("Impede login sem inserir um e-mail", async () => {})
-  it.skip("Dispara a função onSubmit ao clicar no botão de tipo \"submit\"", async () => {})
 })
