@@ -1,5 +1,5 @@
 import ICON_Home from "~/assets/icons/barrafixa/home.png"
-import ICON_Movimentacoes from "~/assets/icons/barrafixa/movimentações.png"
+import ICON_Movimentacoes from "~/assets/icons/barrafixa/movimentacoes.png"
 import ICON_Categorias from "~/assets/icons/barrafixa/categorias.png"
 import ICON_Metas from "~/assets/icons/barrafixa/metas.png"
 
