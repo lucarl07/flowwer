@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, logRoles, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
@@ -49,6 +49,16 @@ describe("Página: LoginPage", () => {
 
       expect(email).toHaveValue(emailValue)
       expect(senha).toHaveValue(senhaValue)
+    })
+
+    it("Redireciona para a página \"/signup\"", () => {
+      setup()
+
+      const signupLink = screen.getByRole('link', { 
+        name: /\bsign\s?up\b/i 
+      })
+
+      expect(signupLink).toBeInTheDocument()
     })
   })
 
