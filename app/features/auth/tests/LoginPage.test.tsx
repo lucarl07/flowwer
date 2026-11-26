@@ -2,16 +2,19 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
+import { MemoryRouter } from "react-router";
 import LoginPage from "../LoginPage";
 
 function setup() {
   const user = userEvent.setup();
-  const { container } = render(<LoginPage />);
 
-  // Espiona o submit do <form>. O preventDefault evita o erro do jsdom
-  // ("Not implemented: HTMLFormElement.prototype.requestSubmit/submit").
-  const onSubmit = vi.fn((e: Event) => e.preventDefault());
+  const { container } = render(
+    <MemoryRouter>
+      <LoginPage />
+    </MemoryRouter>
+  );
 
+  const onSubmit = vi.fn();
   container.querySelector("form")!.addEventListener("submit", onSubmit);
 
   return {
