@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
@@ -18,6 +18,7 @@ function setup() {
   container.querySelector("form")!.addEventListener("submit", onSubmit);
 
   return {
+    container,
     user,
     onSubmit,
     email: screen.getByLabelText(/\be-?mail\b/i),
@@ -56,6 +57,14 @@ describe("Página: LoginPage", () => {
       "@address", 
       "@address.com", 
     ]
+
+    it("Impede o envio padrão do navegador", () => {
+      const { container } = setup()
+      const form = container.querySelector("form")!
+      const didDefaultAction = fireEvent.submit(form)
+
+      expect(didDefaultAction).toBe(false)
+    })
 
     it("Não envia quando e-mail e senha estão vazios", async () => {
       const { user, onSubmit, email, senha, botao } = setup();
