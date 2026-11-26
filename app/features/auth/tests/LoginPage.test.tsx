@@ -28,7 +28,7 @@ function setup() {
 }
 
 describe("Página: LoginPage", () => {
-  describe("Comportamento básico", () => {
+  describe("Comportamento da página", () => {
     it("Carrega os componentes de entrada e botão \"Entrar\"", () => {
       const { email, senha, botao } = setup()
 
@@ -36,7 +36,9 @@ describe("Página: LoginPage", () => {
       expect(senha).toBeInTheDocument()
       expect(botao).toBeInTheDocument()
     })
+  })
 
+  describe("Interações do usuário", () => {
     it("Atualiza o valor dos componentes de entrada ao digitar neles", async () => {
       const { user, email, senha } = setup()
       const emailValue = "Olá mundo!"
