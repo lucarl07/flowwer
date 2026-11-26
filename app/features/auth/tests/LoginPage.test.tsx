@@ -21,8 +21,8 @@ function setup() {
     user,
     onSubmit,
     email: screen.getByLabelText(/\be-?mail\b/i),
-    senha: screen.getByLabelText(/\bsenha\b/i),
-    botao: screen.getByRole("button", { name: "Entrar" }),
+    senha: screen.getByLabelText(/\bpassword\b/i),
+    botao: screen.getByRole("button", { name: /login/i }),
   };
 }
 
