@@ -4,7 +4,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 
 import { MemoryRouter } from "react-router";
 import SignupPage from "../SignupPage"
-import { use } from "react";
 
 /**
  * Fornece algumas ferramentas para realização dos testes. 
